@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Bank</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Idea Bank</h1>
+        <p>A growing collection of ideas, powered by AI. Each one captured, categorized, and crafted into something worth reading.</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search ideas..." autocomplete="off">
+        </div>
+        <div class="category-filters" id="category-filters"></div>
+    </div>
+
+    <div class="ideas-grid" id="ideas-grid"></div>
+
+    <script>
+        // This variable is updated by Claude Code when new ideas are added.
+        // Do not modify manually.
+        var ideasData = {"ideas":[],"categories":["Technology","Business","Creative","Science","Personal","Design","Other"]};
+    </script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
