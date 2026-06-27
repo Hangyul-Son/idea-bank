@@ -2,6 +2,10 @@
 
 This is an AI-powered idea blog. When the user wants to add an idea, follow these steps precisely.
 
+## Writing Style Rules
+
+- **Never use em dashes** (the long dash character). Use a regular hyphen with spaces ( - ) instead.
+
 ## How to Add a New Idea
 
 When the user says something like "add this idea", "new idea", or provides content (text, images, audio, video) they want turned into an idea page:
