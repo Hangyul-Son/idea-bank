@@ -6,22 +6,25 @@
     <title>Inside NVIDIA's AI Racks: Who Builds What - Idea Bank</title>
     <link rel="stylesheet" href="../../assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
     <style>
     /* ===== Rack Atlas - page-scoped design tokens ===== */
     :root {
-        --ax-bg: #f6f6f3;
-        --ax-surface: #fcfcfa;
-        --ax-surface2: #efefe9;
-        --ax-ink: #16181a;
-        --ax-ink2: #4c5257;
-        --ax-muted: #7d8489;
-        --ax-hairline: #e2e2da;
-        --ax-border: rgba(22, 24, 26, 0.13);
-        --ax-accent: #5c8a00;
-        --ax-accent-soft: rgba(92, 138, 0, 0.12);
-        --ax-good: #006300;
-        --ax-bad: #c23636;
+        color-scheme: light;
+        --ax-bg: #ffffff;
+        --ax-surface: #ffffff;
+        --ax-surface2: #f2f5f8;
+        --ax-ink: #1b2430;
+        --ax-ink2: #3e4c63;
+        --ax-muted: #6c7a8f;
+        --ax-hairline: #d8dfe8;
+        --ax-border: rgba(0, 40, 85, 0.18);
+        --ax-navy: #002855;
+        --ax-navy-soft: #eaf0f7;
+        --ax-accent: #c8102e;
+        --ax-accent-soft: rgba(200, 16, 46, 0.08);
+        --ax-good: #007a33;
+        --ax-bad: #c8102e;
         --ax-compute: #5c8a00;
         --ax-inter: #8636e6;
         --ax-power: #a32e0a;
@@ -29,53 +32,9 @@
         --ax-net: #b0246d;
         --ax-mem: #855400;
         --ax-struct: #6a7076;
-        --ax-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-        --ax-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --ax-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+        --ax-body: Arial, 'Helvetica Neue', Helvetica, sans-serif;
         --ax-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    }
-    @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) {
-            --ax-bg: #0e1013;
-            --ax-surface: #14171c;
-            --ax-surface2: #1b2026;
-            --ax-ink: #e9ecee;
-            --ax-ink2: #b6bdc3;
-            --ax-muted: #7e878f;
-            --ax-hairline: #262b33;
-            --ax-border: rgba(233, 236, 238, 0.14);
-            --ax-accent: #76b900;
-            --ax-accent-soft: rgba(118, 185, 0, 0.14);
-            --ax-good: #0ca30c;
-            --ax-bad: #e06060;
-            --ax-compute: #69a50e;
-            --ax-inter: #7e5ce6;
-            --ax-power: #b8400e;
-            --ax-cool: #3d96e8;
-            --ax-net: #e0559a;
-            --ax-mem: #8f6905;
-            --ax-struct: #8b939b;
-        }
-    }
-    :root[data-theme="dark"] {
-        --ax-bg: #0e1013;
-        --ax-surface: #14171c;
-        --ax-surface2: #1b2026;
-        --ax-ink: #e9ecee;
-        --ax-ink2: #b6bdc3;
-        --ax-muted: #7e878f;
-        --ax-hairline: #262b33;
-        --ax-border: rgba(233, 236, 238, 0.14);
-        --ax-accent: #76b900;
-        --ax-accent-soft: rgba(118, 185, 0, 0.14);
-        --ax-good: #0ca30c;
-        --ax-bad: #e06060;
-        --ax-compute: #69a50e;
-        --ax-inter: #7e5ce6;
-        --ax-power: #b8400e;
-        --ax-cool: #3d96e8;
-        --ax-net: #e0559a;
-        --ax-mem: #8f6905;
-        --ax-struct: #8b939b;
     }
 
     body { background: var(--ax-bg); }
@@ -85,13 +44,15 @@
     .atlas-page .idea-header h1 {
         font-family: var(--ax-display);
         font-size: clamp(2rem, 5vw, 3.4rem);
-        font-weight: 900;
-        letter-spacing: -0.02em;
+        font-weight: 700;
+        letter-spacing: -0.01em;
         text-wrap: balance;
-        color: var(--ax-ink);
+        color: var(--ax-navy);
     }
     .atlas-page .idea-meta { color: var(--ax-ink2); }
     .atlas-page .back-link { color: var(--ax-accent); }
+    .atlas-page .tag-pill { background: var(--ax-accent-soft); color: var(--ax-accent); }
+    .atlas-page .category-badge { background: var(--ax-navy); }
 
     .atlas { font-family: var(--ax-body); color: var(--ax-ink); }
     .atlas * { box-sizing: border-box; }
@@ -108,8 +69,9 @@
         padding: 0.6rem 0.9rem;
         background: var(--ax-surface);
         border: 1px solid var(--ax-border);
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+        border-top: 3px solid var(--ax-accent);
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
         margin: 0 0 1.75rem;
     }
     .ax-genswitch { display: flex; gap: 4px; background: var(--ax-surface2); border-radius: 8px; padding: 4px; }
@@ -120,7 +82,7 @@
         transition: background 0.15s, color 0.15s;
     }
     .ax-genswitch button:hover { color: var(--ax-ink); }
-    .ax-genswitch button.active { background: var(--ax-accent); color: #fff; }
+    .ax-genswitch button.active { background: var(--ax-navy); color: #fff; }
     .ax-genswitch button .yr { display: block; font-size: 0.6rem; font-weight: 400; opacity: 0.85; letter-spacing: 0.04em; }
     .ax-ladder { display: flex; align-items: center; gap: 0.15rem; flex-wrap: wrap; margin-left: auto; }
     .ax-ladder a {
@@ -139,17 +101,17 @@
     }
     .ax-spec { background: var(--ax-surface); padding: 0.8rem 0.9rem; }
     .ax-spec .k { font-family: var(--ax-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ax-muted); }
-    .ax-spec .v { font-family: var(--ax-display); font-size: 1.25rem; font-weight: 700; margin-top: 0.15rem; font-variant-numeric: tabular-nums; }
+    .ax-spec .v { font-family: var(--ax-display); font-size: 1.25rem; font-weight: 700; margin-top: 0.15rem; font-variant-numeric: tabular-nums; color: var(--ax-navy); }
     .ax-spec .d { font-size: 0.72rem; color: var(--ax-ink2); margin-top: 0.1rem; }
 
     /* ----- sections ----- */
     .ax-section { margin: 0 0 3.25rem; scroll-margin-top: 84px; }
     .ax-section > h2 {
         font-family: var(--ax-display); font-size: clamp(1.35rem, 2.6vw, 1.9rem);
-        font-weight: 800; letter-spacing: -0.015em; margin: 0 0 0.3rem; text-wrap: balance;
+        font-weight: 700; letter-spacing: -0.015em; margin: 0 0 0.3rem; text-wrap: balance; color: var(--ax-navy);
     }
     .ax-kicker {
-        font-family: var(--ax-mono); font-size: 0.7rem; font-weight: 600;
+        font-family: var(--ax-body); font-size: 0.7rem; font-weight: 700;
         text-transform: uppercase; letter-spacing: 0.14em; color: var(--ax-accent);
         margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.5rem;
     }
@@ -161,7 +123,7 @@
     .ax-stage { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr); gap: 1.25rem; align-items: start; }
     .ax-canvas {
         background: var(--ax-surface); border: 1px solid var(--ax-border);
-        border-radius: 12px; padding: 1.1rem; overflow-x: auto;
+        border-radius: 6px; padding: 1.1rem; overflow-x: auto;
     }
     .ax-canvas figure { margin: 0; }
     .ax-canvas svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
@@ -172,7 +134,7 @@
         padding: 0.35rem 0.7rem; border: 1px solid var(--ax-border); border-radius: 999px;
         background: transparent; color: var(--ax-ink2); cursor: pointer;
     }
-    .ax-tabs button.active { background: var(--ax-ink); color: var(--ax-bg); border-color: var(--ax-ink); }
+    .ax-tabs button.active { background: var(--ax-navy); color: #fff; border-color: var(--ax-navy); }
 
     /* legend */
     .ax-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; margin: 0.6rem 0 0; padding: 0; list-style: none; }
@@ -195,7 +157,7 @@
 
     /* ----- dossier ----- */
     .ax-dossier {
-        background: var(--ax-surface); border: 1px solid var(--ax-border); border-radius: 12px;
+        background: var(--ax-surface); border: 1px solid var(--ax-border); border-radius: 6px;
         padding: 1rem 1rem 0.6rem; position: sticky; top: 76px;
         max-height: calc(100vh - 96px); overflow-y: auto;
     }
@@ -205,7 +167,7 @@
         border-bottom-width: 2px; border-radius: 4px; padding: 0 0.3rem; color: var(--ax-ink2);
     }
     .ax-dhead { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.2rem; }
-    .ax-dhead h3 { font-family: var(--ax-display); font-size: 1.12rem; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+    .ax-dhead h3 { font-family: var(--ax-display); font-size: 1.12rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; color: var(--ax-navy); }
     .ax-syschip {
         font-family: var(--ax-mono); font-size: 0.62rem; font-weight: 600; text-transform: uppercase;
         letter-spacing: 0.08em; color: #fff; padding: 0.18rem 0.5rem; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 0.2rem;
@@ -252,10 +214,10 @@
     #ax-tip small { display: block; font-weight: 400; opacity: 0.75; }
 
     /* ----- ledger ----- */
-    .ax-matrix-wrap { overflow-x: auto; border: 1px solid var(--ax-border); border-radius: 12px; background: var(--ax-surface); }
+    .ax-matrix-wrap { overflow-x: auto; border: 1px solid var(--ax-border); border-radius: 6px; background: var(--ax-surface); }
     table.ax-matrix { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.82rem; }
     .ax-matrix th, .ax-matrix td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--ax-hairline); vertical-align: top; }
-    .ax-matrix thead th { font-family: var(--ax-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ax-muted); font-weight: 600; }
+    .ax-matrix thead th { font-family: var(--ax-body); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; background: var(--ax-navy); font-weight: 700; }
     .ax-matrix tbody tr:last-child td { border-bottom: 0; }
     .ax-matrix td .cat { font-weight: 600; display: flex; align-items: center; gap: 0.45rem; }
     .ax-matrix td .cat i { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
@@ -263,8 +225,8 @@
     .ax-matrix td .tcell .note { color: var(--ax-ink2); font-size: 0.78rem; line-height: 1.45; }
 
     .ax-charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
-    .ax-chart { background: var(--ax-surface); border: 1px solid var(--ax-border); border-radius: 12px; padding: 1rem 1.1rem; }
-    .ax-chart h3 { font-family: var(--ax-display); font-size: 0.95rem; font-weight: 700; margin: 0 0 0.2rem; }
+    .ax-chart { background: var(--ax-surface); border: 1px solid var(--ax-border); border-radius: 6px; padding: 1rem 1.1rem; }
+    .ax-chart h3 { font-family: var(--ax-display); font-size: 0.95rem; font-weight: 700; margin: 0 0 0.2rem; color: var(--ax-navy); }
     .ax-chart .sub { font-size: 0.72rem; color: var(--ax-muted); margin-bottom: 0.8rem; }
     .ax-bar-row { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
     .ax-bar-row .bl { font-family: var(--ax-mono); font-size: 0.72rem; color: var(--ax-ink2); text-align: right; }
@@ -281,11 +243,11 @@
         background: var(--ax-surface); color: var(--ax-ink); font-family: var(--ax-body); font-size: 0.86rem;
     }
     .ax-toolbar input:focus { outline: 2px solid var(--ax-accent); outline-offset: 1px; }
-    .ax-index-wrap { overflow-x: auto; border: 1px solid var(--ax-border); border-radius: 12px; background: var(--ax-surface); }
+    .ax-index-wrap { overflow-x: auto; border: 1px solid var(--ax-border); border-radius: 6px; background: var(--ax-surface); }
     table.ax-index { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 0.82rem; }
     .ax-index th, .ax-index td { text-align: left; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--ax-hairline); vertical-align: top; }
-    .ax-index thead th { font-family: var(--ax-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ax-muted); font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; }
-    .ax-index thead th.sorted { color: var(--ax-accent); }
+    .ax-index thead th { font-family: var(--ax-body); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; background: var(--ax-navy); font-weight: 700; cursor: pointer; user-select: none; white-space: nowrap; }
+    .ax-index thead th.sorted { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
     .ax-index tbody tr:last-child td { border-bottom: 0; }
     .ax-index td.cap { font-family: var(--ax-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
     .ax-index td .co { font-weight: 600; }
