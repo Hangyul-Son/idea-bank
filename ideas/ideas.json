@@ -1,6 +1,15 @@
 {
   "ideas": [
     {
+      "title": "Inside NVIDIA's AI Racks: Who Builds What",
+      "slug": "inside-nvidia-ai-racks",
+      "category": "Technology",
+      "tags": ["nvidia", "gb200", "vera rubin", "supply chain", "data centers"],
+      "summary": "An interactive teardown of NVIDIA's GB200, GB300, and Vera Rubin racks - hover any component to see who supplies it, their market caps and home countries, and whether their slice of each rack is growing or shrinking.",
+      "date": "2026-08-26",
+      "media": []
+    },
+    {
       "title": "Your Eyes Hurt Because You Forgot They're Muscles",
       "slug": "screen-tired-eyes-huberman-fix",
       "category": "Science",
