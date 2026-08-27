@@ -76,7 +76,7 @@
     }
     .ax-genswitch { display: flex; gap: 4px; background: var(--ax-surface2); border-radius: 8px; padding: 4px; }
     .ax-genswitch button {
-        font-family: var(--ax-mono); font-size: 0.78rem; font-weight: 600;
+        font-family: var(--ax-body); font-size: 0.78rem; font-weight: 700;
         padding: 0.42rem 0.8rem; border: 0; border-radius: 6px; cursor: pointer;
         background: transparent; color: var(--ax-ink2);
         transition: background 0.15s, color 0.15s;
@@ -86,7 +86,7 @@
     .ax-genswitch button .yr { display: block; font-size: 0.6rem; font-weight: 400; opacity: 0.85; letter-spacing: 0.04em; }
     .ax-ladder { display: flex; align-items: center; gap: 0.15rem; flex-wrap: wrap; margin-left: auto; }
     .ax-ladder a {
-        font-family: var(--ax-mono); font-size: 0.72rem; text-decoration: none;
+        font-family: var(--ax-body); font-size: 0.74rem; font-weight: 600; text-decoration: none;
         color: var(--ax-muted); padding: 0.3rem 0.5rem; border-radius: 6px;
     }
     .ax-ladder a:hover { color: var(--ax-ink); background: var(--ax-surface2); }
@@ -100,7 +100,7 @@
         margin-bottom: 2.5rem;
     }
     .ax-spec { background: var(--ax-surface); padding: 0.8rem 0.9rem; }
-    .ax-spec .k { font-family: var(--ax-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ax-muted); }
+    .ax-spec .k { font-family: var(--ax-body); font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ax-muted); }
     .ax-spec .v { font-family: var(--ax-display); font-size: 1.25rem; font-weight: 700; margin-top: 0.15rem; font-variant-numeric: tabular-nums; color: var(--ax-navy); }
     .ax-spec .d { font-size: 0.72rem; color: var(--ax-ink2); margin-top: 0.1rem; }
 
@@ -127,10 +127,10 @@
     }
     .ax-canvas figure { margin: 0; }
     .ax-canvas svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
-    .ax-canvas figcaption { font-size: 0.76rem; color: var(--ax-muted); margin-top: 0.75rem; line-height: 1.5; }
+    .ax-canvas figcaption { font-size: 0.8rem; color: var(--ax-muted); margin-top: 0.75rem; line-height: 1.5; }
     .ax-canvas .ax-tabs { display: flex; gap: 4px; margin-bottom: 0.9rem; flex-wrap: wrap; }
     .ax-tabs button {
-        font-family: var(--ax-mono); font-size: 0.74rem; font-weight: 600;
+        font-family: var(--ax-body); font-size: 0.76rem; font-weight: 700;
         padding: 0.35rem 0.7rem; border: 1px solid var(--ax-border); border-radius: 999px;
         background: transparent; color: var(--ax-ink2); cursor: pointer;
     }
@@ -138,22 +138,22 @@
 
     /* legend */
     .ax-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; margin: 0.6rem 0 0; padding: 0; list-style: none; }
-    .ax-legend li { display: flex; align-items: center; gap: 0.38rem; font-family: var(--ax-mono); font-size: 0.68rem; color: var(--ax-ink2); }
+    .ax-legend li { display: flex; align-items: center; gap: 0.38rem; font-family: var(--ax-body); font-size: 0.72rem; font-weight: 600; color: var(--ax-ink2); }
     .ax-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 
     /* SVG part styling */
     .ax-part { cursor: pointer; }
     .ax-part rect.body { transition: filter 0.12s ease, stroke-width 0.12s ease; }
-    .ax-part:hover rect.body, .ax-part:focus-visible rect.body, .ax-part.pinned rect.body { stroke-width: 2.25; filter: brightness(1.06); }
+    .ax-part:hover rect.body, .ax-part:focus-visible rect.body, .ax-part.pinned rect.body { stroke: var(--ax-ink); stroke-width: 2; filter: brightness(1.1); }
     .ax-part:focus { outline: none; }
     .ax-part:focus-visible rect.body { stroke-dasharray: 3 2; }
     .ax-part text { pointer-events: none; }
-    svg .ax-lbl { font-family: var(--ax-mono); font-size: 11px; fill: var(--ax-ink); }
-    svg .ax-lbl2 { font-family: var(--ax-mono); font-size: 9.5px; fill: var(--ax-ink2); }
-    svg .ax-note { font-family: var(--ax-body); font-size: 10.5px; fill: var(--ax-muted); }
-    svg .ax-flow { stroke: var(--ax-muted); stroke-width: 1.2; fill: none; }
-    svg .ax-flowlbl { font-family: var(--ax-mono); font-size: 9px; fill: var(--ax-muted); }
-    svg .ax-frame { fill: none; stroke: var(--ax-border); }
+    svg .ax-lbl { font-family: var(--ax-body); font-size: 12px; font-weight: 700; fill: var(--ax-ink); letter-spacing: 0.01em; }
+    svg .ax-lbl2 { font-family: var(--ax-body); font-size: 10.5px; font-weight: 700; fill: var(--ax-ink2); }
+    svg .ax-note { font-family: var(--ax-body); font-size: 11px; fill: var(--ax-muted); }
+    svg .ax-flow { stroke: var(--ax-muted); stroke-width: 1.4; fill: none; }
+    svg .ax-flowlbl { font-family: var(--ax-body); font-size: 10px; font-weight: 600; fill: var(--ax-muted); }
+    svg .ax-frame { fill: none; stroke: var(--ax-hairline); stroke-width: 1.2; }
 
     /* ----- dossier ----- */
     .ax-dossier {
@@ -172,8 +172,10 @@
         font-family: var(--ax-mono); font-size: 0.62rem; font-weight: 600; text-transform: uppercase;
         letter-spacing: 0.08em; color: #fff; padding: 0.18rem 0.5rem; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 0.2rem;
     }
-    .ax-dsub { font-family: var(--ax-mono); font-size: 0.72rem; color: var(--ax-accent); font-weight: 600; margin-bottom: 0.4rem; }
+    .ax-dsub { font-family: var(--ax-body); font-size: 0.74rem; color: var(--ax-accent); font-weight: 700; margin-bottom: 0.4rem; }
     .ax-ddesc { font-size: 0.84rem; color: var(--ax-ink2); line-height: 1.6; margin: 0 0 0.9rem; }
+    .ax-simple { background: var(--ax-navy-soft); border-left: 3px solid var(--ax-navy); border-radius: 0 4px 4px 0; padding: 0.5rem 0.7rem; font-size: 0.83rem; color: var(--ax-ink); line-height: 1.55; margin: 0 0 0.7rem; }
+    .ax-simple b { color: var(--ax-navy); }
     .ax-pin-note { font-size: 0.7rem; font-family: var(--ax-mono); color: var(--ax-muted); margin-bottom: 0.6rem; }
 
     .ax-supplier {
@@ -206,7 +208,7 @@
     /* floating hover label */
     #ax-tip {
         position: fixed; z-index: 60; pointer-events: none; display: none;
-        font-family: var(--ax-mono); font-size: 0.7rem; font-weight: 600;
+        font-family: var(--ax-body); font-size: 0.72rem; font-weight: 700;
         background: var(--ax-ink); color: var(--ax-bg);
         padding: 0.28rem 0.55rem; border-radius: 6px; max-width: 260px;
         box-shadow: 0 4px 14px rgba(0,0,0,0.25);
@@ -397,7 +399,7 @@
                 <section class="ax-section" id="index">
                     <div class="ax-kicker">The cast</div>
                     <h2>Supplier index</h2>
-                    <p class="ax-intro">Every company on this page in one sortable table. Click a column header to sort; type to filter.</p>
+                    <p class="ax-intro">Every company on this page in one sortable table. Click a column header to sort; type to filter. Market caps are approximate, checked against live quotes in late August 2026.</p>
                     <div class="ax-toolbar">
                         <input type="search" id="index-filter" placeholder="Filter by company, country, or component..." aria-label="Filter supplier table">
                     </div>
@@ -474,132 +476,132 @@
             struct: { name: "Boards, build & integration" }
         },
         companies: {
-            nvidia: { name: "NVIDIA", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:NVDA", capTxt: "~$4.6T" },
-            tsmc: { name: "TSMC", country: "Taiwan", flag: "🇹🇼", ticker: "NYSE:TSM / TWSE:2330", capTxt: "~$2.2T" },
-            skhynix: { name: "SK hynix", country: "South Korea", flag: "🇰🇷", ticker: "KRX:000660", capTxt: "~$300B" },
-            samsung: { name: "Samsung Electronics", country: "South Korea", flag: "🇰🇷", ticker: "KRX:005930", capTxt: "~$500B" },
-            micron: { name: "Micron Technology", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MU", capTxt: "~$250B" },
-            ibiden: { name: "Ibiden", country: "Japan", flag: "🇯🇵", ticker: "TYO:4062", capTxt: "~$18B" },
+            nvidia: { name: "NVIDIA", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:NVDA", cap: 5100, capTxt: "~$5.1T" },
+            tsmc: { name: "TSMC", country: "Taiwan", flag: "🇹🇼", ticker: "NYSE:TSM / TWSE:2330", cap: 2100, capTxt: "~$2.1T" },
+            skhynix: { name: "SK hynix", country: "South Korea", flag: "🇰🇷", ticker: "KRX:000660", cap: 880, capTxt: "~$880B" },
+            samsung: { name: "Samsung Electronics", country: "South Korea", flag: "🇰🇷", ticker: "KRX:005930", cap: 1330, capTxt: "~$1.3T" },
+            micron: { name: "Micron Technology", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MU", cap: 1050, capTxt: "~$1.1T" },
+            ibiden: { name: "Ibiden", country: "Japan", flag: "🇯🇵", ticker: "TYO:4062", cap: 36, capTxt: "~$36B" },
             shinko: { name: "Shinko Electric", country: "Japan", flag: "🇯🇵", ticker: "Private (JIC-owned)", capTxt: "Private" },
-            unimicron: { name: "Unimicron", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3037", capTxt: "~$9B" },
-            nanyapcb: { name: "Nan Ya PCB", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:8046", capTxt: "~$5B" },
-            kinsus: { name: "Kinsus Interconnect", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3189", capTxt: "~$3B" },
-            ats: { name: "AT&S", country: "Austria", flag: "🇦🇹", ticker: "VIE:ATS", capTxt: "~$2B" },
-            ase: { name: "ASE Technology (SPIL)", country: "Taiwan", flag: "🇹🇼", ticker: "NYSE:ASX / TWSE:3711", capTxt: "~$26B" },
-            amkor: { name: "Amkor Technology", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AMKR", capTxt: "~$12B" },
-            arm: { name: "Arm Holdings", country: "United Kingdom", flag: "🇬🇧", ticker: "NASDAQ:ARM", capTxt: "~$160B" },
-            foxconn: { name: "Foxconn (Hon Hai)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2317", capTxt: "~$110B" },
-            wistron: { name: "Wistron", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3231", capTxt: "~$17B" },
-            quanta: { name: "Quanta Computer", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2382", capTxt: "~$40B" },
-            wiwynn: { name: "Wiwynn", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6669", capTxt: "~$17B" },
-            inventec: { name: "Inventec", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2356", capTxt: "~$8B" },
-            smci: { name: "Supermicro", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:SMCI", capTxt: "~$20B" },
-            dell: { name: "Dell Technologies", country: "United States", flag: "🇺🇸", ticker: "NYSE:DELL", capTxt: "~$95B" },
-            hpe: { name: "HPE", country: "United States", flag: "🇺🇸", ticker: "NYSE:HPE", capTxt: "~$32B" },
-            amphenol: { name: "Amphenol", country: "United States", flag: "🇺🇸", ticker: "NYSE:APH", capTxt: "~$140B" },
-            te: { name: "TE Connectivity", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:TEL", capTxt: "~$59B" },
-            lotes: { name: "LOTES", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3533", capTxt: "~$10B" },
-            fit: { name: "FIT Hon Teng", country: "Taiwan", flag: "🇹🇼", ticker: "HKG:6088", capTxt: "~$7B" },
-            luxshare: { name: "Luxshare Precision", country: "China", flag: "🇨🇳", ticker: "SZSE:002475", capTxt: "~$50B" },
-            bizlink: { name: "BizLink", country: "United States", flag: "🇺🇸", ticker: "TWSE:3665", capTxt: "~$6B" },
+            unimicron: { name: "Unimicron", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3037", cap: 55, capTxt: "~$55B" },
+            nanyapcb: { name: "Nan Ya PCB", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:8046", cap: 23, capTxt: "~$23B" },
+            kinsus: { name: "Kinsus Interconnect", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3189", cap: 14.5, capTxt: "~$15B" },
+            ats: { name: "AT&S", country: "Austria", flag: "🇦🇹", ticker: "VIE:ATS", cap: 6.5, capTxt: "~$6.5B" },
+            ase: { name: "ASE Technology (SPIL)", country: "Taiwan", flag: "🇹🇼", ticker: "NYSE:ASX / TWSE:3711", cap: 85, capTxt: "~$85B" },
+            amkor: { name: "Amkor Technology", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AMKR", cap: 12, capTxt: "~$12B" },
+            arm: { name: "Arm Holdings", country: "United Kingdom", flag: "🇬🇧", ticker: "NASDAQ:ARM", cap: 260, capTxt: "~$260B" },
+            foxconn: { name: "Foxconn (Hon Hai)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2317", cap: 108, capTxt: "~$108B" },
+            wistron: { name: "Wistron", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3231", cap: 20, capTxt: "~$20B" },
+            quanta: { name: "Quanta Computer", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2382", cap: 40, capTxt: "~$40B" },
+            wiwynn: { name: "Wiwynn", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6669", cap: 38, capTxt: "~$38B" },
+            inventec: { name: "Inventec", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2356", cap: 7.5, capTxt: "~$7.5B" },
+            smci: { name: "Supermicro", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:SMCI", cap: 24.5, capTxt: "~$25B" },
+            dell: { name: "Dell Technologies", country: "United States", flag: "🇺🇸", ticker: "NYSE:DELL", cap: 290, capTxt: "~$290B" },
+            hpe: { name: "HPE", country: "United States", flag: "🇺🇸", ticker: "NYSE:HPE", cap: 70, capTxt: "~$70B" },
+            amphenol: { name: "Amphenol", country: "United States", flag: "🇺🇸", ticker: "NYSE:APH", cap: 196, capTxt: "~$196B" },
+            te: { name: "TE Connectivity", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:TEL", cap: 59, capTxt: "~$59B" },
+            lotes: { name: "LOTES", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3533", cap: 9.7, capTxt: "~$9.7B" },
+            fit: { name: "FIT Hon Teng", country: "Taiwan", flag: "🇹🇼", ticker: "HKG:6088", cap: 8.1, capTxt: "~$8.1B" },
+            luxshare: { name: "Luxshare Precision", country: "China", flag: "🇨🇳", ticker: "SZSE:002475", cap: 64, capTxt: "~$64B" },
+            bizlink: { name: "BizLink", country: "United States", flag: "🇺🇸", ticker: "TWSE:3665", cap: 13, capTxt: "~$13B" },
             molex: { name: "Molex", country: "United States", flag: "🇺🇸", ticker: "Private (Koch)", capTxt: "Private" },
-            wus: { name: "WUS Printed Circuit", country: "China", flag: "🇨🇳", ticker: "SZSE:002463", capTxt: "~$18B" },
-            ttm: { name: "TTM Technologies", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TTMI", capTxt: "~$8B" },
-            vgt: { name: "Victory Giant", country: "China", flag: "🇨🇳", ticker: "SZSE:300476", capTxt: "~$16B" },
-            gce: { name: "Gold Circuit (GCE)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2368", capTxt: "~$5B" },
-            emc: { name: "Elite Material (EMC)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2383", capTxt: "~$15B" },
-            doosan: { name: "Doosan", country: "South Korea", flag: "🇰🇷", ticker: "KRX:000150", capTxt: "~$8B" },
-            tuc: { name: "Taiwan Union Tech", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:6274", capTxt: "~$4B" },
-            astera: { name: "Astera Labs", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:ALAB", capTxt: "~$30B" },
-            broadcom: { name: "Broadcom", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AVGO", capTxt: "~$1.5T" },
-            marvell: { name: "Marvell", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MRVL", capTxt: "~$85B" },
-            credo: { name: "Credo", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:CRDO", capTxt: "~$26B" },
-            aspeed: { name: "ASPEED", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:5274", capTxt: "~$6B" },
+            wus: { name: "WUS Printed Circuit", country: "China", flag: "🇨🇳", ticker: "SZSE:002463", cap: 31, capTxt: "~$31B" },
+            ttm: { name: "TTM Technologies", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TTMI", cap: 13.5, capTxt: "~$14B" },
+            vgt: { name: "Victory Giant", country: "China", flag: "🇨🇳", ticker: "SZSE:300476", cap: 35, capTxt: "~$35B" },
+            gce: { name: "Gold Circuit (GCE)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2368", cap: 15, capTxt: "~$15B" },
+            emc: { name: "Elite Material (EMC)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2383", cap: 59, capTxt: "~$59B" },
+            doosan: { name: "Doosan", country: "South Korea", flag: "🇰🇷", ticker: "KRX:000150", cap: 17, capTxt: "~$17B" },
+            tuc: { name: "Taiwan Union Tech", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:6274", cap: 12.5, capTxt: "~$13B" },
+            astera: { name: "Astera Labs", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:ALAB", cap: 56, capTxt: "~$56B" },
+            broadcom: { name: "Broadcom", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AVGO", cap: 1700, capTxt: "~$1.7T" },
+            marvell: { name: "Marvell", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MRVL", cap: 205, capTxt: "~$205B" },
+            credo: { name: "Credo", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:CRDO", cap: 45, capTxt: "~$45B" },
+            aspeed: { name: "ASPEED", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:5274", cap: 22, capTxt: "~$22B" },
             axiado: { name: "Axiado", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            kioxia: { name: "Kioxia", country: "Japan", flag: "🇯🇵", ticker: "TYO:285A", capTxt: "~$20B" },
-            mps: { name: "Monolithic Power (MPS)", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MPWR", capTxt: "~$65B" },
-            infineon: { name: "Infineon", country: "Germany", flag: "🇩🇪", ticker: "ETR:IFX", capTxt: "~$86B" },
-            renesas: { name: "Renesas", country: "Japan", flag: "🇯🇵", ticker: "TYO:6723", capTxt: "~$26B" },
-            onsemi: { name: "onsemi", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:ON", capTxt: "~$28B" },
-            aos: { name: "Alpha & Omega Semi", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AOSL", capTxt: "~$0.9B" },
-            vicor: { name: "Vicor", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:VICR", capTxt: "~$3B" },
-            navitas: { name: "Navitas", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:NVTS", capTxt: "~$3.3B" },
-            ti: { name: "Texas Instruments", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TXN", capTxt: "~$165B" },
+            kioxia: { name: "Kioxia", country: "Japan", flag: "🇯🇵", ticker: "TYO:285A", cap: 170, capTxt: "~$170B" },
+            mps: { name: "Monolithic Power (MPS)", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:MPWR", cap: 65, capTxt: "~$65B" },
+            infineon: { name: "Infineon", country: "Germany", flag: "🇩🇪", ticker: "ETR:IFX", cap: 85, capTxt: "~$85B" },
+            renesas: { name: "Renesas", country: "Japan", flag: "🇯🇵", ticker: "TYO:6723", cap: 45, capTxt: "~$45B" },
+            onsemi: { name: "onsemi", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:ON", cap: 28, capTxt: "~$28B" },
+            aos: { name: "Alpha & Omega Semi", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AOSL", cap: 1, capTxt: "~$1B" },
+            vicor: { name: "Vicor", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:VICR", cap: 11, capTxt: "~$11B" },
+            navitas: { name: "Navitas", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:NVTS", cap: 3.6, capTxt: "~$3.6B" },
+            ti: { name: "Texas Instruments", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TXN", cap: 244, capTxt: "~$244B" },
             rohm: { name: "ROHM", country: "Japan", flag: "🇯🇵", ticker: "TYO:6963", capTxt: "~$9B" },
             powi: { name: "Power Integrations", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:POWI", capTxt: "~$3B" },
             innoscience: { name: "Innoscience", country: "China", flag: "🇨🇳", ticker: "HKG:2577", capTxt: "~$6B" },
             epc: { name: "EPC", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            delta: { name: "Delta Electronics", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2308", capTxt: "~$105B" },
-            liteon: { name: "Lite-On Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2301", capTxt: "~$16B" },
-            flex: { name: "Flex", country: "Singapore", flag: "🇸🇬", ticker: "NASDAQ:FLEX", capTxt: "~$24B" },
-            megmeet: { name: "Megmeet", country: "China", flag: "🇨🇳", ticker: "SZSE:002851", capTxt: "~$8B" },
-            chicony: { name: "Chicony Power", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6412", capTxt: "~$1.8B" },
-            aei: { name: "Advanced Energy", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AEIS", capTxt: "~$12B" },
-            musashi: { name: "Musashi Energy Solutions", country: "Japan", flag: "🇯🇵", ticker: "TYO:7220", capTxt: "~$1.6B" },
-            yageo: { name: "YAGEO (KEMET)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2327", capTxt: "~$20B" },
+            delta: { name: "Delta Electronics", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2308", cap: 158, capTxt: "~$158B" },
+            liteon: { name: "Lite-On Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2301", cap: 18, capTxt: "~$18B" },
+            flex: { name: "Flex", country: "Singapore", flag: "🇸🇬", ticker: "NASDAQ:FLEX", cap: 46, capTxt: "~$46B" },
+            megmeet: { name: "Megmeet", country: "China", flag: "🇨🇳", ticker: "SZSE:002851", cap: 12, capTxt: "~$12B" },
+            chicony: { name: "Chicony Power", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6412", cap: 1.3, capTxt: "~$1.3B" },
+            aei: { name: "Advanced Energy", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AEIS", cap: 13, capTxt: "~$13B" },
+            musashi: { name: "Musashi Energy Solutions", country: "Japan", flag: "🇯🇵", ticker: "TYO:7220", cap: 1.5, capTxt: "~$1.5B" },
+            yageo: { name: "YAGEO (KEMET)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2327", cap: 46, capTxt: "~$46B" },
             licap: { name: "LICAP Technologies", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            simplo: { name: "Simplo Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:6121", capTxt: "~$2.4B" },
-            dynapack: { name: "Dynapack", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:3211", capTxt: "~$2.4B" },
-            sdi: { name: "Samsung SDI", country: "South Korea", flag: "🇰🇷", ticker: "KRX:006400", capTxt: "~$13B" },
-            lges: { name: "LG Energy Solution", country: "South Korea", flag: "🇰🇷", ticker: "KRX:373220", capTxt: "~$70B" },
+            simplo: { name: "Simplo Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:6121", cap: 2.4, capTxt: "~$2.4B" },
+            dynapack: { name: "Dynapack", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:3211", cap: 2.3, capTxt: "~$2.3B" },
+            sdi: { name: "Samsung SDI", country: "South Korea", flag: "🇰🇷", ticker: "KRX:006400", cap: 29, capTxt: "~$29B" },
+            lges: { name: "LG Energy Solution", country: "South Korea", flag: "🇰🇷", ticker: "KRX:373220", cap: 62, capTxt: "~$62B" },
             coolermaster: { name: "Cooler Master", country: "Taiwan", flag: "🇹🇼", ticker: "Private", capTxt: "Private" },
-            avc: { name: "AVC (Asia Vital Components)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3017", capTxt: "~$15B" },
+            avc: { name: "AVC (Asia Vital Components)", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3017", cap: 37, capTxt: "~$37B" },
             boyd: { name: "Boyd", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            auras: { name: "Auras Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:3324", capTxt: "~$3.1B" },
-            jentech: { name: "Jentech Precision", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3653", capTxt: "~$7B" },
-            fositek: { name: "Fositek", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6805", capTxt: "~$4.5B" },
+            auras: { name: "Auras Technology", country: "Taiwan", flag: "🇹🇼", ticker: "TPEX:3324", cap: 3.2, capTxt: "~$3.2B" },
+            jentech: { name: "Jentech Precision", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3653", cap: 18, capTxt: "~$18B" },
+            fositek: { name: "Fositek", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:6805", cap: 4.4, capTxt: "~$4.4B" },
             staubli: { name: "Staubli", country: "Switzerland", flag: "🇨🇭", ticker: "Private", capTxt: "Private" },
-            cpc: { name: "CPC (Dover)", country: "United States", flag: "🇺🇸", ticker: "NYSE:DOV", capTxt: "~$28B" },
-            parker: { name: "Parker Hannifin", country: "United States", flag: "🇺🇸", ticker: "NYSE:PH", capTxt: "~$90B" },
+            cpc: { name: "CPC (Dover)", country: "United States", flag: "🇺🇸", ticker: "NYSE:DOV", cap: 27.5, capTxt: "~$28B" },
+            parker: { name: "Parker Hannifin", country: "United States", flag: "🇺🇸", ticker: "NYSE:PH", cap: 128, capTxt: "~$128B" },
             danfoss: { name: "Danfoss", country: "Denmark", flag: "🇩🇰", ticker: "Private", capTxt: "Private" },
-            kaori: { name: "Kaori Heat Treatment", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:8996", capTxt: "~$2B" },
-            vertiv: { name: "Vertiv", country: "United States", flag: "🇺🇸", ticker: "NYSE:VRT", capTxt: "~$65B" },
+            kaori: { name: "Kaori Heat Treatment", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:8996", cap: 4.8, capTxt: "~$4.8B" },
+            vertiv: { name: "Vertiv", country: "United States", flag: "🇺🇸", ticker: "NYSE:VRT", cap: 100, capTxt: "~$100B" },
             coolit: { name: "CoolIT Systems", country: "Canada", flag: "🇨🇦", ticker: "Private (KKR)", capTxt: "Private" },
-            schneider: { name: "Schneider Electric (Motivair)", country: "France", flag: "🇫🇷", ticker: "EPA:SU", capTxt: "~$140B" },
-            nvent: { name: "nVent", country: "United Kingdom", flag: "🇬🇧", ticker: "NYSE:NVT", capTxt: "~$15B" },
-            sunon: { name: "Sunon", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2421", capTxt: "~$1.4B" },
-            castrol: { name: "Castrol (BP)", country: "United Kingdom", flag: "🇬🇧", ticker: "LSE:BP", capTxt: "~$95B" },
+            schneider: { name: "Schneider Electric (Motivair)", country: "France", flag: "🇫🇷", ticker: "EPA:SU", cap: 200, capTxt: "~$200B" },
+            nvent: { name: "nVent", country: "United Kingdom", flag: "🇬🇧", ticker: "NYSE:NVT", cap: 24.6, capTxt: "~$25B" },
+            sunon: { name: "Sunon", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2421", cap: 1.3, capTxt: "~$1.3B" },
+            castrol: { name: "Castrol (BP)", country: "United Kingdom", flag: "🇬🇧", ticker: "LSE:BP", cap: 112, capTxt: "~$112B" },
             arteco: { name: "Arteco", country: "Belgium", flag: "🇧🇪", ticker: "Private", capTxt: "Private" },
-            dow: { name: "Dow", country: "United States", flag: "🇺🇸", ticker: "NYSE:DOW", capTxt: "~$18B" },
+            dow: { name: "Dow", country: "United States", flag: "🇺🇸", ticker: "NYSE:DOW", cap: 22.5, capTxt: "~$23B" },
             ttk: { name: "TTK", country: "France", flag: "🇫🇷", ticker: "Private", capTxt: "Private" },
-            celestica: { name: "Celestica", country: "Canada", flag: "🇨🇦", ticker: "NYSE:CLS", capTxt: "~$39B" },
-            accton: { name: "Accton", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2345", capTxt: "~$17B" },
-            fabrinet: { name: "Fabrinet", country: "Thailand", flag: "🇹🇭", ticker: "NYSE:FN", capTxt: "~$12B" },
-            innolight: { name: "InnoLight (Zhongji)", country: "China", flag: "🇨🇳", ticker: "SZSE:300308", capTxt: "~$70B" },
-            eoptolink: { name: "Eoptolink", country: "China", flag: "🇨🇳", ticker: "SZSE:300502", capTxt: "~$32B" },
-            coherent: { name: "Coherent", country: "United States", flag: "🇺🇸", ticker: "NYSE:COHR", capTxt: "~$22B" },
-            accelink: { name: "Accelink", country: "China", flag: "🇨🇳", ticker: "SZSE:002281", capTxt: "~$14B" },
-            aaoi: { name: "Applied Optoelectronics", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AAOI", capTxt: "~$2B" },
-            lumentum: { name: "Lumentum", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:LITE", capTxt: "~$20B" },
-            corning: { name: "Corning", country: "United States", flag: "🇺🇸", ticker: "NYSE:GLW", capTxt: "~$68B" },
-            tfc: { name: "TFC Communication", country: "China", flag: "🇨🇳", ticker: "SZSE:300394", capTxt: "~$15B" },
-            browave: { name: "Browave", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3163", capTxt: "~$0.5B" },
-            arista: { name: "Arista Networks", country: "United States", flag: "🇺🇸", ticker: "NYSE:ANET", capTxt: "~$180B" },
-            eaton: { name: "Eaton", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:ETN", capTxt: "~$161B" },
-            abb: { name: "ABB", country: "Switzerland", flag: "🇨🇭", ticker: "SWX:ABBN", capTxt: "~$130B" },
-            siemensenergy: { name: "Siemens Energy", country: "Germany", flag: "🇩🇪", ticker: "ETR:ENR", capTxt: "~$100B" },
-            siemens: { name: "Siemens", country: "Germany", flag: "🇩🇪", ticker: "ETR:SIE", capTxt: "~$195B" },
-            gev: { name: "GE Vernova", country: "United States", flag: "🇺🇸", ticker: "NYSE:GEV", capTxt: "~$170B" },
-            hitachi: { name: "Hitachi Energy", country: "Japan", flag: "🇯🇵", ticker: "TYO:6501", capTxt: "~$135B" },
+            celestica: { name: "Celestica", country: "Canada", flag: "🇨🇦", ticker: "NYSE:CLS", cap: 46, capTxt: "~$46B" },
+            accton: { name: "Accton", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:2345", cap: 38, capTxt: "~$38B" },
+            fabrinet: { name: "Fabrinet", country: "Thailand", flag: "🇹🇭", ticker: "NYSE:FN", cap: 17, capTxt: "~$17B" },
+            innolight: { name: "InnoLight (Zhongji)", country: "China", flag: "🇨🇳", ticker: "SZSE:300308", cap: 145, capTxt: "~$145B" },
+            eoptolink: { name: "Eoptolink", country: "China", flag: "🇨🇳", ticker: "SZSE:300502", cap: 80, capTxt: "~$80B" },
+            coherent: { name: "Coherent", country: "United States", flag: "🇺🇸", ticker: "NYSE:COHR", cap: 55, capTxt: "~$55B" },
+            accelink: { name: "Accelink", country: "China", flag: "🇨🇳", ticker: "SZSE:002281", cap: 22, capTxt: "~$22B" },
+            aaoi: { name: "Applied Optoelectronics", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:AAOI", cap: 11, capTxt: "~$11B" },
+            lumentum: { name: "Lumentum", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:LITE", cap: 67, capTxt: "~$67B" },
+            corning: { name: "Corning", country: "United States", flag: "🇺🇸", ticker: "NYSE:GLW", cap: 125, capTxt: "~$125B" },
+            tfc: { name: "TFC Communication", country: "China", flag: "🇨🇳", ticker: "SZSE:300394", cap: 34, capTxt: "~$34B" },
+            browave: { name: "Browave", country: "Taiwan", flag: "🇹🇼", ticker: "TWSE:3163", cap: 2, capTxt: "~$2B" },
+            arista: { name: "Arista Networks", country: "United States", flag: "🇺🇸", ticker: "NYSE:ANET", cap: 242, capTxt: "~$242B" },
+            eaton: { name: "Eaton", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:ETN", cap: 175, capTxt: "~$175B" },
+            abb: { name: "ABB", country: "Switzerland", flag: "🇨🇭", ticker: "SWX:ABBN", cap: 179, capTxt: "~$179B" },
+            siemensenergy: { name: "Siemens Energy", country: "Germany", flag: "🇩🇪", ticker: "ETR:ENR", cap: 146, capTxt: "~$146B" },
+            siemens: { name: "Siemens", country: "Germany", flag: "🇩🇪", ticker: "ETR:SIE", cap: 240, capTxt: "~$240B" },
+            gev: { name: "GE Vernova", country: "United States", flag: "🇺🇸", ticker: "NYSE:GEV", cap: 248, capTxt: "~$248B" },
+            hitachi: { name: "Hitachi Energy", country: "Japan", flag: "🇯🇵", ticker: "TYO:6501", cap: 160, capTxt: "~$160B" },
             mitsubishielec: { name: "Mitsubishi Electric", country: "Japan", flag: "🇯🇵", ticker: "TYO:6503", capTxt: "~$50B" },
-            mhi: { name: "Mitsubishi Heavy (Power)", country: "Japan", flag: "🇯🇵", ticker: "TYO:7011", capTxt: "~$90B" },
+            mhi: { name: "Mitsubishi Heavy (Power)", country: "Japan", flag: "🇯🇵", ticker: "TYO:7011", cap: 95, capTxt: "~$95B" },
             heron: { name: "Heron Power", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            tesla: { name: "Tesla (Megapack)", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TSLA", capTxt: "~$1.1T" },
-            cat: { name: "Caterpillar", country: "United States", flag: "🇺🇸", ticker: "NYSE:CAT", capTxt: "~$265B" },
-            cummins: { name: "Cummins", country: "United States", flag: "🇺🇸", ticker: "NYSE:CMI", capTxt: "~$56B" },
-            rr: { name: "Rolls-Royce (mtu)", country: "United Kingdom", flag: "🇬🇧", ticker: "LSE:RR", capTxt: "~$115B" },
-            generac: { name: "Generac", country: "United States", flag: "🇺🇸", ticker: "NYSE:GNRC", capTxt: "~$10B" },
-            bloom: { name: "Bloom Energy", country: "United States", flag: "🇺🇸", ticker: "NYSE:BE", capTxt: "~$25B" },
-            jci: { name: "Johnson Controls", country: "United States", flag: "🇺🇸", ticker: "NYSE:JCI", capTxt: "~$80B" },
-            trane: { name: "Trane Technologies", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:TT", capTxt: "~$95B" },
-            carrier: { name: "Carrier", country: "United States", flag: "🇺🇸", ticker: "NYSE:CARR", capTxt: "~$60B" },
-            daikin: { name: "Daikin", country: "Japan", flag: "🇯🇵", ticker: "TYO:6367", capTxt: "~$38B" },
-            munters: { name: "Munters", country: "Sweden", flag: "🇸🇪", ticker: "STO:MTRS", capTxt: "~$3B" },
-            legrand: { name: "Legrand (Starline)", country: "France", flag: "🇫🇷", ticker: "EPA:LR", capTxt: "~$45B" },
-            jacobs: { name: "Jacobs", country: "United States", flag: "🇺🇸", ticker: "NYSE:J", capTxt: "~$17B" },
+            tesla: { name: "Tesla (Megapack)", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:TSLA", cap: 1400, capTxt: "~$1.4T" },
+            cat: { name: "Caterpillar", country: "United States", flag: "🇺🇸", ticker: "NYSE:CAT", cap: 395, capTxt: "~$395B" },
+            cummins: { name: "Cummins", country: "United States", flag: "🇺🇸", ticker: "NYSE:CMI", cap: 79, capTxt: "~$79B" },
+            rr: { name: "Rolls-Royce (mtu)", country: "United Kingdom", flag: "🇬🇧", ticker: "LSE:RR", cap: 170, capTxt: "~$170B" },
+            generac: { name: "Generac", country: "United States", flag: "🇺🇸", ticker: "NYSE:GNRC", cap: 12.1, capTxt: "~$12B" },
+            bloom: { name: "Bloom Energy", country: "United States", flag: "🇺🇸", ticker: "NYSE:BE", cap: 64, capTxt: "~$64B" },
+            jci: { name: "Johnson Controls", country: "United States", flag: "🇺🇸", ticker: "NYSE:JCI", cap: 86.6, capTxt: "~$87B" },
+            trane: { name: "Trane Technologies", country: "Ireland", flag: "🇮🇪", ticker: "NYSE:TT", cap: 105, capTxt: "~$105B" },
+            carrier: { name: "Carrier", country: "United States", flag: "🇺🇸", ticker: "NYSE:CARR", cap: 55, capTxt: "~$55B" },
+            daikin: { name: "Daikin", country: "Japan", flag: "🇯🇵", ticker: "TYO:6367", cap: 39, capTxt: "~$39B" },
+            munters: { name: "Munters", country: "Sweden", flag: "🇸🇪", ticker: "STO:MTRS", cap: 3.2, capTxt: "~$3.2B" },
+            legrand: { name: "Legrand (Starline)", country: "France", flag: "🇫🇷", ticker: "EPA:LR", cap: 39.8, capTxt: "~$40B" },
+            jacobs: { name: "Jacobs", country: "United States", flag: "🇺🇸", ticker: "NYSE:J", cap: 16.8, capTxt: "~$17B" },
             bechtel: { name: "Bechtel", country: "United States", flag: "🇺🇸", ticker: "Private", capTxt: "Private" },
-            cadence: { name: "Cadence", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:CDNS", capTxt: "~$90B" },
-            ptc: { name: "PTC", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:PTC", capTxt: "~$22B" }
+            cadence: { name: "Cadence", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:CDNS", cap: 87, capTxt: "~$87B" },
+            ptc: { name: "PTC", country: "United States", flag: "🇺🇸", ticker: "NASDAQ:PTC", cap: 16.4, capTxt: "~$16B" }
         },
         components: {
             "gpu-silicon": {
@@ -2100,9 +2102,58 @@
             { label: "Lenovo Press - GB300 NVL72 rack reference", url: "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai" },
             { label: "Korea Economic Daily / Reuters - HBM4 qualification, SOCAMM, CCL reporting", url: "https://www.kedglobal.com/" }
         ],
-        method: "How this was built: on Aug 26, 2026, nine research agents swept supply-chain reporting (SemiAnalysis, TrendForce, DigiTimes, NVIDIA documentation, Tom's Hardware, ServeTheHome, Korean and Taiwanese trade press, analyst notes as covered in public press), then four adversarial fact-checkers challenged ~500 claims. Anything resting on single-broker channel checks is tagged 'reported' rather than stated as fact. Market caps are approximate mid-2026 values, cross-checked against share counts, and rounded - treat them as tiers, not quotes. Component allocations and share percentages are largely analyst estimates; NVIDIA does not disclose its supplier splits. This page is an independent research visualization and is not affiliated with NVIDIA or any company shown."
+        method: "How this was built: on Aug 26, 2026, nine research agents swept supply-chain reporting (SemiAnalysis, TrendForce, DigiTimes, NVIDIA documentation, Tom's Hardware, ServeTheHome, Korean and Taiwanese trade press, analyst notes as covered in public press), then four adversarial fact-checkers challenged ~500 claims. Anything resting on single-broker channel checks is tagged 'reported' rather than stated as fact. Market caps were re-verified against live quotes on Aug 27, 2026, cross-checked against share counts, and rounded - they move daily, so treat them as approximate tiers, not quotes. Component allocations and share percentages are largely analyst estimates; NVIDIA does not disclose its supplier splits. This page is an independent research visualization and is not affiliated with NVIDIA or any company shown."
     };
     // __DB_END__
+    // Plain-English explainers shown at the top of each dossier
+    var SIMPLE = {
+        "gpu-silicon": "The engine of the whole machine - the chip that does the actual AI math. NVIDIA draws the blueprints; TSMC's factories in Taiwan manufacture them. Nobody else can make these.",
+        "cpu-silicon": "The GPU's assistant - a conventional processor that fetches data, runs the operating system and keeps the GPUs fed. One CPU looks after every two GPUs.",
+        "cowos": "The gluing step: bonding the GPU chip and its memory stacks onto one sliver of silicon so they can talk at extreme speed. Factory capacity for this step limits how many AI chips exist at all.",
+        "substrate": "A miniature multi-layer wiring board under each chip. It translates the chip's microscopic connections into larger pins the main board can actually use.",
+        "hbm": "The GPU's working memory, stacked in little towers right beside the chip so data barely travels. After the GPU itself, this is the most expensive thing in the rack.",
+        "lpddr": "A second, roomier pool of memory attached to the CPU - a big desk next to the GPU's small, ultra-fast notepad. From Vera Rubin it comes on plug-in sticks instead of being soldered down.",
+        "superchip-board": "The motherboard: one board carrying a CPU, two GPUs, their memory and their power converters. Who gets to build it is one of the biggest money fights in the rack.",
+        "gpu-attach": "How the GPU is fastened to the board. Today it is soldered on permanently; a plug-in socket (easy to swap, like a light bulb) keeps being planned and cancelled - each decision moves billions between connector makers.",
+        "tray-pcb": "The green circuit boards themselves - dozens of copper layers laminated into one slab. AI boards need far more layers than a laptop's, made to far tighter tolerances.",
+        "ccl": "The raw sheet material circuit boards are cut from: copper foil bonded to resin. Sounds boring, but signal quality starts here, and supply is the tightest in the whole chain.",
+        "nic": "The rack's phone line to other racks - one network card per GPU. Its speed doubles every generation: 400 gigabits, then 800, now 1,600.",
+        "dpu": "A traffic-management computer inside each server. It handles storage, security and housekeeping chores so the expensive GPUs never wait around.",
+        "retimer": "Signal boosters that keep ultra-fast data clean as it crosses a big circuit board - like repeaters on a long phone line. NVIDIA keeps absorbing this job into its own chips.",
+        "bmc": "A tiny always-on computer in every tray that lets operators check temperatures, update firmware and reboot the hardware remotely - the building superintendent of the server.",
+        "ssd": "Local flash storage in each tray - fast scratch space for data the GPUs are about to chew on.",
+        "vrm": "Power converters sitting right beside each GPU. They turn the rack's 54 volts into the roughly one volt a chip drinks - at currents comparable to an arc welder.",
+        "cold-plate": "Metal plates with water channels inside, pressed directly onto each hot chip - the radiator of liquid cooling. Water carries heat away far better than air ever could.",
+        "quick-disconnect": "Dripless quick-release couplers on every tray's water line - like a garden-hose click connector, engineered so a tray can slide out without spilling a drop on live electronics.",
+        "nvswitch": "The telephone exchange between GPUs: switch chips that let all 72 GPUs in the rack talk to each other simultaneously at full speed, so they behave like one giant chip.",
+        "switch-tray-assy": "Who physically builds the switch trays. Reportedly a single company: Foxconn.",
+        "switch-pcb": "The circuit board inside each switch tray - one of the hardest boards in the rack to manufacture.",
+        "nvlink-spine": "A bundle of over 5,000 copper wires running down the back of the rack - about two miles of cable in one cabinet - wiring every GPU to every switch chip. Copper was chosen over fiber optics because it needs ~20 kW less power.",
+        "tray-midplane": "The wiring inside a tray. Older generations used bundles of cables; Vera Rubin replaces them with one big circuit board, so a tray snaps together in five minutes instead of two hours.",
+        "compute-tray": "One pizza-box server holding 4 GPUs and 2 CPUs. Eighteen of them fill a rack. This is where the actual computing happens.",
+        "switch-tray": "The nine boxes in the middle of the rack whose only job is connecting the GPUs to each other. No computing - pure plumbing for data.",
+        "power-shelf": "Rack-mounted power bricks - the same idea as a laptop charger, scaled to a small neighborhood. They convert building power into the DC that feeds everything in the cabinet.",
+        "busbar": "A thick copper rail running down the rack's spine. Every tray clips onto it for power, the way trains draw power from a third rail.",
+        "bbu": "Batteries inside the rack - enough for a few seconds of ride-through if the building power blips, long enough for backup systems to catch up.",
+        "supercap": "Electrical shock absorbers. AI training makes thousands of GPUs surge and idle in perfect sync, which rattles the power grid - these capacitors smooth out the spikes.",
+        "manifold": "The rack's plumbing: vertical pipes that distribute cool water to every tray and collect the warm water coming back - hundreds of liters per minute.",
+        "coolant": "The fluid in the pipes - three parts water, one part antifreeze - plus the leak sensors watching every joint. A recurring purchase, like printer ink for a data center.",
+        "fans": "The little air cooling that remains. By Vera Rubin the trays are sealed and fanless - almost everything leaves through water.",
+        "mgmt-switch": "Small network boxes at the top of the rack for monitoring and control - the rack's intercom, separate from the data highways.",
+        "rack-integration": "The companies that assemble, test and ship the finished cabinet - 1.5 tonnes, roughly the weight of a car, and worth more than a house.",
+        "scaleout-switch": "The big network switches that connect rack to rack, letting thousands of GPUs across a building act as one computer.",
+        "optics": "Laser-light data plugs. Between racks, electrical signals are converted to light and sent over fiber - each little plug moves hundreds of gigabits and costs over a thousand dollars.",
+        "dsp": "The cleanup chips inside those laser plugs, plus powered copper cables for shorter hops - the unglamorous parts that keep signals readable at these speeds.",
+        "cpo": "The next step for networking: building the light-conversion directly into the switch chip instead of using plug-in modules - fewer parts, far less power.",
+        "cdu": "Heat exchangers that move heat from the racks' water loop into the building's water loop - the middleman between hot chips and the cooling towers on the roof.",
+        "sidecar-800v": "A cabinet of power equipment parked next to each rack. Once a rack draws more than a small factory, its power conversion no longer fits inside - so it gets a dedicated neighbor.",
+        "transformer": "The neighborhood-scale electrical gear that steps grid power down for the building. Order one today and it arrives in three to five years - this is the real bottleneck of the AI boom.",
+        "ups": "Giant battery-backed power protection for the whole building, increasingly paired with Tesla-style grid batteries to smooth the AI training load.",
+        "genset": "Backup engines - and, as power grids run out of headroom, dedicated gas turbines that let an AI campus generate its own electricity.",
+        "chiller": "The rooftop machinery that finally dumps all the heat outdoors - the last stop on a journey that started at a fingernail-sized chip.",
+        "busway": "Overhead power rails feeding each row of racks - an extension cord the size of a steel beam.",
+        "dsx": "The blueprint layer: the engineering firms, construction giants and simulation software that design the whole building before ground is broken - now organized around NVIDIA's own reference design."
+    };
 
     (function () {
         'use strict';
@@ -2164,6 +2215,7 @@
             var html = '<div class="ax-dhead"><h3>' + esc(comp.name) + '</h3><span class="ax-syschip" style="background:' + sysColor(comp.sys) + '">' + esc(sys.name) + '</span></div>';
             if (g && g.label) html += '<div class="ax-dsub">' + esc(DB.genMeta[state.gen].name + ' · ' + g.label) + '</div>';
             if (pinned) html += '<div class="ax-pin-note">Pinned - click the part again to release.</div>';
+            if (typeof SIMPLE !== 'undefined' && SIMPLE[compId]) html += '<div class="ax-simple"><b>In plain terms:</b> ' + esc(SIMPLE[compId]) + '</div>';
             html += '<p class="ax-ddesc">' + esc((g && g.detail) || comp.desc) + '</p>';
             if (!g) {
                 html += '<div class="ax-absent">Not present in ' + esc(DB.genMeta[state.gen].name) + '. Switch generation to see this component’s suppliers.</div>';
@@ -2221,25 +2273,26 @@
             var color = sysColor(sys);
             var g = svgEl('g', {});
             var x = b.x * scale, y = b.y * scale, w = b.w * scale, h = b.h * scale;
-            var body = svgEl('rect', { x: x + 1, y: y + 1, width: w - 2, height: h - 2, rx: 3, 'class': 'body', fill: color, 'fill-opacity': b.dim ? 0.05 : 0.13, stroke: color, 'stroke-width': b.dim ? 1 : 1.4 });
+            var body = b.dim
+                ? svgEl('rect', { x: x + 1, y: y + 1, width: w - 2, height: h - 2, rx: 2, 'class': 'body', fill: 'var(--ax-surface2)', stroke: 'var(--ax-hairline)', 'stroke-width': 1 })
+                : svgEl('rect', { x: x + 1, y: y + 1, width: w - 2, height: h - 2, rx: 2, 'class': 'body', fill: color, stroke: 'rgba(0,0,0,0.18)', 'stroke-width': 1 });
             g.appendChild(body);
-            if (!b.noSpine) g.appendChild(svgEl('rect', { x: x + 1, y: y + 1, width: 3.5, height: h - 2, fill: color, rx: 1 }));
-            var fs = b.small ? 9.5 : 11;
+            var fs = b.small ? 10.5 : 12;
             if (b.label) {
-                var ly = b.labelBottom ? (y + h - 5) : (y + h / 2 + fs * 0.36);
-                var t = svgEl('text', { x: x + w / 2 + 1, y: ly, 'text-anchor': 'middle', 'class': b.small ? 'ax-lbl2' : 'ax-lbl' });
+                var ly = b.labelBottom ? (y + h - 6) : (b.sub ? y + h / 2 - 1.5 : y + h / 2 + fs * 0.36);
+                var t = svgEl('text', { x: x + w / 2, y: ly, 'text-anchor': 'middle', 'class': b.small ? 'ax-lbl2' : 'ax-lbl', style: b.dim ? 'fill:var(--ax-muted)' : 'fill:#fff' });
                 t.textContent = b.label;
                 g.appendChild(t);
             }
             if (b.sub) {
-                var t2 = svgEl('text', { x: x + w / 2 + 1, y: y + h / 2 + fs * 0.36 + 11, 'text-anchor': 'middle', 'class': 'ax-lbl2' });
+                var t2 = svgEl('text', { x: x + w / 2, y: y + h / 2 + 9.5, 'text-anchor': 'middle', 'class': 'ax-lbl2', style: 'font-weight:400;' + (b.dim ? 'fill:var(--ax-muted)' : 'fill:rgba(255,255,255,0.88)') });
                 t2.textContent = b.sub;
                 g.appendChild(t2);
             }
             if (b.badge) {
-                var bw = 34;
-                g.appendChild(svgEl('rect', { x: x + w - bw - 4, y: y + 3, width: bw, height: 13, rx: 6.5, fill: 'var(--ax-accent)' }));
-                var bt = svgEl('text', { x: x + w - bw / 2 - 4, y: y + 12.5, 'text-anchor': 'middle', style: 'font-family:var(--ax-mono);font-size:8.5px;font-weight:700', fill: '#fff' });
+                var bw = b.badge.length * 6 + 14;
+                g.appendChild(svgEl('rect', { x: x + w - bw - 4, y: y + 3, width: bw, height: 14, rx: 2, fill: '#fff', stroke: 'rgba(0,0,0,0.12)' }));
+                var bt = svgEl('text', { x: x + w - bw / 2 - 4, y: y + 13, 'text-anchor': 'middle', style: 'font-family:var(--ax-body);font-size:9px;font-weight:700;letter-spacing:0.04em', fill: 'var(--ax-accent)' });
                 bt.textContent = b.badge;
                 g.appendChild(bt);
             }
@@ -2292,7 +2345,7 @@
             host.appendChild(svg);
         }
 
-        /* ---------- rack elevation (built from slot list, then drawn as blocks) ---------- */
+        /* ---------- rack elevation ---------- */
         function renderRack() {
             var view = DB.views.rack[state.gen];
             var host = document.getElementById('rack-svg');
@@ -2303,47 +2356,42 @@
             view.slots.forEach(function (s) { totalRu += s.ru * (s.n || 1); });
             var H = totalRu * RU + 46;
             var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'group', 'aria-label': 'Rack front elevation, top to bottom', style: 'max-width:' + W + 'px' });
-            // rack frame
-            svg.appendChild(svgEl('rect', { x: RX - 7, y: 10, width: RW + 14, height: H - 24, rx: 8, fill: 'var(--ax-surface2)', stroke: 'var(--ax-border)', 'stroke-width': 1.5 }));
-            // rear vertical runs (spine, busbar, manifolds) drawn to the LEFT of the rack
-            (view.rear || []).forEach(function (r, i) {
+            svg.appendChild(svgEl('rect', { x: RX - 8, y: 10, width: RW + 16, height: H - 24, rx: 4, fill: 'var(--ax-surface2)', stroke: 'var(--ax-hairline)', 'stroke-width': 1.2 }));
+            (view.rear || []).forEach(function (rr, i) {
                 var bx = 10 + i * 32, bw = 24, by = 18, bh = H - 42;
-                var comp = DB.components[r.comp];
+                var comp = DB.components[rr.comp];
                 var color = sysColor(comp ? comp.sys : 'struct');
                 var g = svgEl('g', {});
-                g.appendChild(svgEl('rect', { x: bx, y: by, width: bw, height: bh, rx: 4, 'class': 'body', fill: color, 'fill-opacity': 0.13, stroke: color, 'stroke-width': 1.4 }));
-                var cx = bx + bw / 2, cy = by + bh / 2;
-                var t = svgEl('text', { x: 0, y: 0, 'text-anchor': 'middle', 'class': 'ax-lbl2', transform: 'translate(' + (cx + 3.5) + ',' + cy + ') rotate(90)' });
-                t.textContent = r.label;
+                g.appendChild(svgEl('rect', { x: bx, y: by, width: bw, height: bh, rx: 2, 'class': 'body', fill: color, stroke: 'rgba(0,0,0,0.18)', 'stroke-width': 1 }));
+                var t = svgEl('text', { x: 0, y: 0, 'text-anchor': 'middle', 'class': 'ax-lbl2', style: 'fill:#fff', transform: 'translate(' + (bx + bw / 2 + 3.5) + ',' + (by + bh / 2) + ') rotate(90)' });
+                t.textContent = rr.label;
                 g.appendChild(t);
-                wirePart(g, 'rack', r.comp, r.label);
+                wirePart(g, 'rack', rr.comp, rr.label);
                 svg.appendChild(g);
             });
             if (view.rear && view.rear.length) {
-                var rl = svgEl('text', { x: 10, y: 10, 'class': 'ax-note' });
+                var rl = svgEl('text', { x: 10, y: 9, 'class': 'ax-note' });
                 rl.textContent = 'rear of rack';
                 svg.appendChild(rl);
             }
             var y = 18;
             view.slots.forEach(function (slot) {
                 var n = slot.n || 1;
+                var comp = DB.components[slot.comp];
+                var color = sysColor(slot.sys || (comp ? comp.sys : 'struct'));
                 for (var i = 0; i < n; i++) {
                     var h = slot.ru * RU;
-                    var comp = DB.components[slot.comp];
-                    var color = sysColor(slot.sys || (comp ? comp.sys : 'struct'));
                     var g = svgEl('g', {});
-                    var body = svgEl('rect', { x: RX, y: y + 1, width: RW, height: h - 2, rx: 2.5, 'class': 'body', fill: color, 'fill-opacity': 0.13, stroke: color, 'stroke-width': 1.3 });
-                    g.appendChild(body);
-                    g.appendChild(svgEl('rect', { x: RX, y: y + 1, width: 4, height: h - 2, fill: color }));
+                    g.appendChild(svgEl('rect', { x: RX, y: y + 1, width: RW, height: h - 2, rx: 2, 'class': 'body', fill: color, stroke: 'rgba(0,0,0,0.18)', 'stroke-width': 1 }));
                     if (i === Math.floor((n - 1) / 2)) {
-                        var t = svgEl('text', { x: RX + 14, y: y + h / 2 + 4 + (n > 1 ? (i === (n - 1) / 2 ? 0 : 0) : 0), 'class': 'ax-lbl' });
-                        t.textContent = slot.label + (n > 1 ? '  ×' + n : '');
+                        var t = svgEl('text', { x: RX + 12, y: y + h / 2 + 4.2, 'class': 'ax-lbl', style: 'fill:#fff' });
+                        t.textContent = slot.label + (n > 1 ? '  \u00d7' + n : '');
                         g.appendChild(t);
                     }
                     if (slot.badge && i === 0) {
-                        var bw = slot.badge.length * 6.4 + 12;
-                        g.appendChild(svgEl('rect', { x: RX + RW - bw - 6, y: y + h / 2 - 7, width: bw, height: 14, rx: 7, fill: 'var(--ax-accent)' }));
-                        var bt = svgEl('text', { x: RX + RW - bw / 2 - 6, y: y + h / 2 + 3.2, 'text-anchor': 'middle', style: 'font-family:var(--ax-mono);font-size:8.5px;font-weight:700', fill: '#fff' });
+                        var bw2 = slot.badge.length * 6.6 + 14;
+                        g.appendChild(svgEl('rect', { x: RX + RW - bw2 - 8, y: y + h / 2 - 8, width: bw2, height: 16, rx: 2, fill: '#fff', stroke: 'rgba(0,0,0,0.12)' }));
+                        var bt = svgEl('text', { x: RX + RW - bw2 / 2 - 8, y: y + h / 2 + 3.8, 'text-anchor': 'middle', style: 'font-family:var(--ax-body);font-size:9.5px;font-weight:700;letter-spacing:0.04em', fill: 'var(--ax-accent)' });
                         bt.textContent = slot.badge;
                         g.appendChild(bt);
                     }
@@ -2351,11 +2399,10 @@
                     svg.appendChild(g);
                     y += h;
                 }
-                // annotation on the right for the group
                 if (slot.note) {
                     var ny = y - (slot.ru * RU * n) / 2;
-                    svg.appendChild(svgEl('line', { x1: RX + RW + 8, y1: ny, x2: RX + RW + 22, y2: ny, 'class': 'ax-flow', 'marker-end': null }));
-                    var nt = svgEl('text', { x: RX + RW + 26, y: ny + 3.5, 'class': 'ax-note' });
+                    svg.appendChild(svgEl('line', { x1: RX + RW + 12, y1: ny, x2: RX + RW + 24, y2: ny, stroke: 'var(--ax-muted)', 'stroke-width': 1 }));
+                    var nt = svgEl('text', { x: RX + RW + 28, y: ny + 3.8, 'class': 'ax-note' });
                     nt.textContent = slot.note;
                     svg.appendChild(nt);
                 }
